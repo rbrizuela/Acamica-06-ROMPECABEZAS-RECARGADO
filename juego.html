@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ROMPECABEZAS RECARGADO</title>
+    <link rel="stylesheet" href="css/juego.css">
+
+    <!-- Recursos para agregar en el head de juego.html -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/sweetalert/sweetalert.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="col-40">
+
+      <div id="titulo">ROMPECABEZAS RECARGADO</div>
+
+      <div class="titulos">Seleccionar</div>
+
+        <form>
+            <ul id="formulario">
+              <li>
+                <label for="cantidadPiezasPorLado">Cantidad de piezas por lado:</label>
+                <input id="cantidadPiezasPorLado" type="number" name="cantidadPiezasPorLado" value="3" min="2" max="6">
+              </li>
+
+              <li>
+                <label for="Nivel">Nivel:</label>
+                <input type="radio" id="optFacil" name="nivel" value="facil" checked="checked">Fácil</input>
+                <input type="radio" id="optIntermedio" name="nivel" value="intermedio">Intermedio</input>
+                <input type="radio" id="optDificil" name="nivel" value="dificil">Difícil</input>
+              </li>
+
+              <div id="boton">
+                <button type="button" name="mezclar" class="boton" onclick="Juego.iniciar()">Mezclar</button>
+              </div>
+
+          </ul>
+
+        </form>
+
+      <div class="titulos">Instrucciones</div>
+      <div>
+        <ul id="lista-instrucciones"></ul>
+      </div>
+
+      <div id="movimientosRestantes">MOVIMIENTOS RESTANTES
+        <div id="contadorDeMovimientos">0</div>
+      </div>
+
+    </div>
+    <div class="col-60">
+      <div id="juego">
+        <canvas id="miCanvas" width="600" height="600" style="border:1px solid #000000;"></canvas>
+      </div>
+    </div>
+    <div id="footer">
+    </div>
+    <script src="js/juego.js"></script>
+  </body>
+</html>
